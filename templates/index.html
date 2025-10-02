@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home -- Flask Date App{% endblock %}
+
+{% block redirects %}
+
+    <a class="nav-link" href="{{url_for('dice')}}">Want to Roll Some Dice?</a>
+
+{% endblock %}
+
+{% block content %}
+
+    <p>The current year is {{ year }}.</p>
+    <p>The current month is {{ month }}.</p>
+
+    {% if month in ["March", "April", "May"] %}
+        <p>It’s Springtime!</p>
+    {% elif month in ["June", "July", "August"] %}
+        <p>It’s Summer!</p>
+    {% elif month in ["September", "October", "November"] %}
+        <p>It’s Fall!</p>
+    {% else %}
+        <p>It’s Winter!</p>
+    {% endif %}
+
+{% endblock %}

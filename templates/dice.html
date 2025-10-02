@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home -- Flask Dice App{% endblock %}
+
+{% block redirects %}
+
+    <a class="nav-link" href="{{url_for('home')}}">Home Page</a>
+
+{% endblock %}
+
+{% block content %}
+
+    <h1>Roll a Dice</h1>
+    <p>Defaulted to 6 sides, 1 dice</p>
+
+    <form action="{{url_for('dice')}}">
+        <label for="amt_sides">Number of Sides:</label>
+            <input type="number" id="amt_sides" name="amt_sides" placeholder="Enter the Amount of Sides.">
+            <br>
+        <label for="amt_dice">Number of Die/Dices:</label>
+            <input type="number" id="amt_dice" name="amt_dice" placeholder="Enter the Amount of Dices.">
+            <br>
+            <br>
+        <input type="submit" value="Submit"><br>Click once you are done.
+    </form>
+
+    {% if 'Dices' and 'Sides' and 'Results' and 'Total' in ency_data %}
+        <h2>Your Dice Rolls</h2>
+        <p>If there was an error, it would print below.</p>
+        <p>{{dice_data}}</p>
+        <p>{{sides_data}}</p>
+        <p>{{result_data}}</p>
+        <p>{{total_data}}</p>
+    {% elif 'Empty' in ency_data %}
+        <p></p>
+    {% endif %}
+
+{% endblock %}
