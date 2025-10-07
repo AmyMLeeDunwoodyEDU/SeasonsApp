@@ -61,21 +61,21 @@ def dice():
                     ency_data.append("Dices")
                     dice_data = (f"You cannot have less than 1 die.")
 
-        # if not num_dice:
-        #     num_dice1 = default_die
-        #     ency_data.remove('Empty')
-        #     try:
-        #         if isinstance(num_dice1, int) == True:
-        #             if num_dice1 == 1:
-        #                 dice_data = (f"You rolled: {num_dice1} die")
-        #                 ency_data.append("Dices")
-        #             if num_dice1 > 1:
-        #                 dice_data = (f"You rolled: {num_dice1} dices")
-        #                 ency_data.append("Dices")
-        #     except ValueError:
-        #         if num_dice1 < 1:
-        #             ency_data.append("Dices")
-        #             dice_data = (f"You cannot have less than 1 die.")
+        if not num_dice:
+             num_dice1 = default_die
+             ency_data.remove('Empty')
+             try:
+                 if isinstance(num_dice1, int) == True:
+                     if num_dice1 == 1:
+                         dice_data = (f"You rolled: {num_dice1} die")
+                         ency_data.append("Dices")
+                     if num_dice1 > 1:
+                         dice_data = (f"You rolled: {num_dice1} dices")
+                         ency_data.append("Dices")
+             except ValueError:
+                 if num_dice1 < 1:
+                     ency_data.append("Dices")
+                     dice_data = (f"You cannot have less than 1 die.")
 
         if num_sides:
             num_sides1 = int(num_sides)
@@ -92,20 +92,20 @@ def dice():
                     ency_data.append("Sides")
                     sides_data = (f"You cannot have a die with less than 1 side.")
         
-        # if not num_sides:
-        #     num_sides1 = default_sides
-        #     try:
-        #         if isinstance(num_sides1, int) == True:
-        #             if num_sides1 == 1:
-        #                 sides_data = (f"With {num_sides1} side")
-        #                 ency_data.append("Sides")
-        #             if num_sides1 > 1:
-        #                 sides_data = (f"With {num_sides1} sides")
-        #                 ency_data.append("Sides")
-        #     except ValueError:
-        #             if num_dice1 == 1 and num_sides < 1:
-        #                 ency_data.append("Sides")
-        #                 sides_data = (f"You cannot have a die with less than 1 side.")
+        if not num_sides:
+             num_sides1 = default_sides
+             try:
+                 if isinstance(num_sides1, int) == True:
+                     if num_sides1 == 1:
+                         sides_data = (f"With {num_sides1} side")
+                         ency_data.append("Sides")
+                     if num_sides1 > 1:
+                         sides_data = (f"With {num_sides1} sides")
+                         ency_data.append("Sides")
+             except ValueError:
+                     if num_dice1 == 1 and num_sides < 1:
+                         ency_data.append("Sides")
+                         sides_data = (f"You cannot have a die with less than 1 side.")
         
         if isinstance(num_dice1, int) == True and isinstance(num_sides1, int) == True:
             results = [random.randint(1, num_sides1) for _ in range(num_dice1)]

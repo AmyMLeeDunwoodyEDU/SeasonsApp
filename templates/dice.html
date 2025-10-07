@@ -13,12 +13,12 @@
     <h1>Roll a Dice</h1>
     <p>Defaulted to 6 sides, 1 dice</p>
 
-    <form action="{{url_for('dice')}}">
+    <form action="{{url_for('dice')}}" method="POST">
         <label for="amt_sides">Number of Sides:</label>
-            <input type="number" id="amt_sides" name="amt_sides" placeholder="Enter the Amount of Sides.">
+            <input type="number" id="amt_sides" name="amt_sides" value="" placeholder="Enter the Amount of Sides.">
             <br>
         <label for="amt_dice">Number of Die/Dices:</label>
-            <input type="number" id="amt_dice" name="amt_dice" placeholder="Enter the Amount of Dices.">
+            <input type="number" id="amt_dice" name="amt_dice" value="" placeholder="Enter the Amount of Dices.">
             <br>
             <br>
         <input type="submit" value="Submit"><br>Click once you are done.
