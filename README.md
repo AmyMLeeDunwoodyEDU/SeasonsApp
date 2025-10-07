@@ -1,5 +1,5 @@
 You must have these installed in VSCode before you continue:
-1. Python Extension, made by microsoft
+1. Python Extension
   | Made by Microsoft
   | Go into VScode, click on the 4 boxes and search up the extension name.
     | a. Pylance
