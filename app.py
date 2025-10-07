@@ -5,7 +5,6 @@ import random
 print("Content-Type: text/html\n")
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
 
 @app.route('/')
 def home():
