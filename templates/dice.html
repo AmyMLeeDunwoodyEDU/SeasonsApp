@@ -8,9 +8,14 @@
 
 {% endblock %}
 
+{% block theheader %}
+
+    <h1>Roll A Dice!</h1>
+
+{% endblock %}
+
 {% block content %}
 
-    <h1>Roll a Dice</h1>
     <p>Defaulted to 1D6, or 1 Dice with 6 Sides</p>
 
     <form action="{{url_for('dice')}}" method="POST">
@@ -25,13 +30,20 @@
         <input type="submit" value="Submit">
     </form>
 
+    <br>
+    <hr>
+
     {% if 'Dices' and 'Sides' and 'Results' and 'Total' in ency_data %}
-        <h2>Your Dice Rolls</h2>
+        <br>
+        <h1>Your Dice Rolls</h1>
         <p>If there was an error, it would print below.</p>
         <p>{{dice_data}}</p>
         <p>{{sides_data}}</p>
         <p>{{result_data}}</p>
         <p>{{total_data}}</p>
+        <br>
+        <hr>
+        <br>
     {% elif 'Empty' in ency_data %}
         <p></p>
     {% endif %}
